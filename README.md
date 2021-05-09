@@ -1,6 +1,6 @@
 # eCommerce Responsive With React
 
-a Responsive eCommerce created in React, with a login, Register and confirm purchases.
+a Responsive eCommerce created in React, with a login, Register and confirm purchases. It also makes use of material-ui to use some components like Grid and also makes use of its Icons
 
 A nike item-based store is held which is called "Tienda el gato"
 
