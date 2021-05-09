@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# eCommerce Responsive With React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+a Responsive eCommerce created in React, with a login, Register and confirm purchases.
 
 ## Available Scripts
 
