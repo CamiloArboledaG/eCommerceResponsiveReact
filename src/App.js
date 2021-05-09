@@ -4,16 +4,23 @@ import Product from './components/Product';
 import Products from './components/Products';
 import ChekoutCard from './components/CheckoutCard';
 import CheckoutPage from './components/CheckoutPage';
+import {Switch, BrowserRouter as Router, Route} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App" >
+    <Router>
+      <div className="App" >
       <Navbar/>
-      <CheckoutPage/>
-      {/* <ChekoutCard/> */}
-     {/** <Products/> */} 
-    {/*<Product/>*/}
+      <Switch>
+      <Route path="/checkout-page">
+           <CheckoutPage/>
+         </Route>
+         <Route path="/">
+           <Products/> 
+         </Route>
+      </Switch>
     </div>
+    </Router>
   );
 }
 

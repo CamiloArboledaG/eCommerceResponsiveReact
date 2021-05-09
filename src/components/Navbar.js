@@ -9,6 +9,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import logo from '../assets/gato.png';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
+import { Link } from 'react-router-dom';
+import {useStateValue} from "../StateProvider";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -38,14 +40,19 @@ const useStyles = makeStyles((theme) => ({
 /**appbar fixed o static */
 export default function Navbar() {
   const classes = useStyles();
+  const [{basket}, dispatch] = useStateValue();
+
 
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar} >
         <Toolbar>
+          <Link to="/">
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" className={classes.Color}>
             <img src={logo} className={classes.image} />
           </IconButton>
+          </Link>
+          
           <div className={classes.grow} />
           <Typography variant="h6" color="textPrimary" component="p" className={classes.Color}>
             Hola Amigo!
@@ -54,11 +61,14 @@ export default function Navbar() {
               <Button variant="contained" color="primary">
               <strong className={classes.Color}>Iniciar sesión</strong>
               </Button>
+              <Link to="checkout-page">
               <IconButton aria-label="Mostrar los items" color="inherent" >
-                  <Badge badgeContent={2} color="secondary">
+                  <Badge badgeContent={basket?.length} color="secondary">
                     <ShoppingCart fontSize="large" color="primary"/>
                   </Badge>
               </IconButton>
+              </Link>
+              
               
           </div>
         </Toolbar>
