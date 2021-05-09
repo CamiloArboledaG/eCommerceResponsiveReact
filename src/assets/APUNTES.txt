@@ -1,0 +1,10 @@
+ <Grid item xs={12}>{/*Pase lo que pase ocupe las 12 columnas*/}
+          <Product/>
+        </Grid>
+        <Grid item xs={12} sm={6}>{/** ocupe las 12 y cuando se hace más grande ocupe 6, la mitad*/}
+        <Product/>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+        <Product/>
+        </Grid>
+        <Grid item xs={6} sm={3}>{/**en pantallas muy pequeñas ocupen 6 columnas, en un poco más grande ocupe 3 columnas */}
