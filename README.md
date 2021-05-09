@@ -18,6 +18,11 @@ It makes use of React router DOM to have each page, to redirect by giving it a b
 ![image](https://user-images.githubusercontent.com/50644185/117589589-11128c80-b0f0-11eb-96d0-97be8777c7ef.png)
 
 
+In the next gif we will see how the page works and what functionalities it fulfills so far
+
+![React-App-Google-Chrome-2021-05-09-18-40-29](https://user-images.githubusercontent.com/50644185/117590853-00b1e000-b0f7-11eb-8d3c-9f47588ef72f.gif)
+
+
 
 ## Built by 🛠️
 * Juan Camilo Arboleda Garcia 
