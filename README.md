@@ -32,10 +32,9 @@ to facilitate the latter 3 components is made use of the default templates provi
 
 firebase is used to make registration and sign-in work and is published through netlify
 
-´´´
+```
 https://gifted-keller-817cbb.netlify.app/
-´´´
-
+```
 
 
 ## Built by 🛠️
