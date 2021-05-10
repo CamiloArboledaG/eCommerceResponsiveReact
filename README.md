@@ -22,6 +22,20 @@ In the next gif we will see how the page works and what functionalities it fulfi
 
 ![React-App-Google-Chrome-2021-05-09-18-40-29](https://user-images.githubusercontent.com/50644185/117590853-00b1e000-b0f7-11eb-8d3c-9f47588ef72f.gif)
 
+login, registration, and check-in and checkout are created.
+
+![image](https://user-images.githubusercontent.com/50644185/117683935-27652a80-b17a-11eb-9214-d88454d35326.png)
+![image](https://user-images.githubusercontent.com/50644185/117683996-321fbf80-b17a-11eb-8631-0940c93aadf6.png)
+![image](https://user-images.githubusercontent.com/50644185/117684028-3b109100-b17a-11eb-87bf-8d4108b2a318.png)
+
+to facilitate the latter 3 components is made use of the default templates provided by Material UI.
+
+firebase is used to make registration and sign-in work and is published through netlify
+
+´´´
+https://gifted-keller-817cbb.netlify.app/
+´´´
+
 
 
 ## Built by 🛠️
