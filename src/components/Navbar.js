@@ -10,7 +10,10 @@ import logo from '../assets/gato.png';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
 import { Link } from 'react-router-dom';
-import {useStateValue} from "../StateProvider";
+import { useStateValue } from "../StateProvider";
+import { auth } from '../firebase';
+import { actionTypes } from '../reducer';
+import { useHistory } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,28 +22,45 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "7rem",
   },
   appBar: {
-      backgroundColor: "#1F1D2B",
-      boxShadow: "none",
+    backgroundColor: "#1F1D2B",
+    boxShadow: "none",
   },
   Color: {
     color: "#E0E6E9",
-},
+  },
   grow: {
-      flexGrow: 1,
+    flexGrow: 1,
   },
   button: {
-      marginLeft: theme.spacing(2),
+    marginLeft: theme.spacing(2),
   },
   image: {
-      marginRight: "10px",
-      height:"3rem"
+    marginRight: "10px",
+    height: "3rem"
   }
 }));
 
 /**appbar fixed o static */
-export default function Navbar() {
+const Navbar = () => {
   const classes = useStyles();
-  const [{basket}, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+  const history = useHistory();
+
+  const handleAuth = () => {
+    if (user) {
+      auth.signOut();
+      dispatch({
+        type: actionTypes.EMPTY_BASKET,
+        basket: [],
+      });
+      dispatch({
+        type: actionTypes.SET_USER,
+        user: null,
+      });
+      history.push("/")
+    }
+  }
+
 
 
   return (
@@ -48,31 +68,36 @@ export default function Navbar() {
       <AppBar position="fixed" className={classes.appBar} >
         <Toolbar>
           <Link to="/">
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" className={classes.Color}>
-            <img src={logo} className={classes.image} />
-          </IconButton>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" className={classes.Color}>
+              <img src={logo} className={classes.image} />
+            </IconButton>
           </Link>
-          
+
           <div className={classes.grow} />
           <Typography variant="h6" color="textPrimary" component="p" className={classes.Color}>
-            Hola Amigo!
+            ¡Hola {user ? user.email : "Amigo"}!
           </Typography>
           <div className={classes.button} >
-              <Button variant="contained" color="primary">
-              <strong className={classes.Color}>Iniciar sesión</strong>
+            <Link to="/signin">
+              <Button variant="contained" color="primary" onClick={handleAuth}>
+                <strong className={classes.Color}>{user ? "Cerrar sesión" : "Iniciar sesión"}</strong>
               </Button>
-              <Link to="checkout-page">
+            </Link>
+
+            <Link to="checkout-page">
               <IconButton aria-label="Mostrar los items" color="inherent" >
-                  <Badge badgeContent={basket?.length} color="secondary">
-                    <ShoppingCart fontSize="large" color="primary"/>
-                  </Badge>
+                <Badge badgeContent={basket?.length} color="secondary">
+                  <ShoppingCart fontSize="large" color="primary" />
+                </Badge>
               </IconButton>
-              </Link>
-              
-              
+            </Link>
+
+
           </div>
         </Toolbar>
       </AppBar>
     </div>
   );
-}
+};
+
+export default Navbar
