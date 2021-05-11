@@ -15,18 +15,6 @@ import Container from '@material-ui/core/Container';
 import {Link as RouteLink, useHistory} from "react-router-dom";
 import { auth } from '../firebase';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -46,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  Color: {
+    color: "#E0E6E9",
+},
 }));
 
 export default function SignIn() {
@@ -66,10 +57,10 @@ export default function SignIn() {
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
+        <Typography component="h1" variant="h5" className={classes.Color}>
+          Iniciar sesión
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate className={classes.Color}>
           <TextField
            value={email}
            onChange={e=>setEmail(e.target.value)}
@@ -78,9 +69,10 @@ export default function SignIn() {
             required
             fullWidth
             id="email"
-            label="Email Address"
+            label="Correo electrónico"
             name="email"
             autoComplete="email"
+            color="secondary"
             autoFocus
           />
           <TextField
@@ -91,42 +83,41 @@ export default function SignIn() {
             required
             fullWidth
             name="password"
-            label="Password"
+            label="Contraseña"
             type="password"
             id="password"
             autoComplete="current-password"
+            color="secondary"
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            label="Recordarme"
+            color="secondary"
           />
           <Button
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            color="secondary"
             className={classes.submit}
             onClick={signin}
           >
-            Sign In
+            Iniciar sesión
           </Button>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
-                Forgot password?
+                ¿Olvidaste tu contraseña?
               </Link>
             </Grid>
             <Grid item>
               <RouteLink to="signup">
-              {"Don't have an account? Sign Up"}
+              {"No tienes una cuenta? creala."}
               </RouteLink>
             </Grid>
           </Grid>
         </form>
       </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
     </Container>
   );
 }

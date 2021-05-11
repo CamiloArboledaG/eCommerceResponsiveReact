@@ -79,7 +79,7 @@ const Navbar = () => {
           </Typography>
           <div className={classes.button} >
             <Link to="/signin">
-              <Button variant="contained" color="primary" onClick={handleAuth}>
+              <Button variant="contained" color="secondary" onClick={handleAuth}>
                 <strong className={classes.Color}>{user ? "Cerrar sesión" : "Iniciar sesión"}</strong>
               </Button>
             </Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
             <Link to="checkout-page">
               <IconButton aria-label="Mostrar los items" color="inherent" >
                 <Badge badgeContent={basket?.length} color="secondary">
-                  <ShoppingCart fontSize="large" color="primary" />
+                  <ShoppingCart fontSize="large" color="secondary" />
                 </Badge>
               </IconButton>
             </Link>

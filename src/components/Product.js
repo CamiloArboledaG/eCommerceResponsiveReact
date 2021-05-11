@@ -34,8 +34,10 @@ const useStyles = makeStyles((theme) => ({
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
+    color: "#E0E6E9",
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
+      
     }),
   },
   expandOpen: {
@@ -112,8 +114,8 @@ export default function Product({product : {id, name, productType, image, price,
           <ExpandMoreIcon />
         </IconButton>
       </CardActions >
-      <Collapse in={expanded} timeout="auto" unmountOnExit className={classes.Color}>
-        <CardContent>
+      <Collapse in={expanded} timeout="auto" unmountOnExit className={classes.Color} >
+        <CardContent >
           <Typography paragraph>{description}</Typography>
         </CardContent>
       </Collapse>

@@ -28,7 +28,7 @@ const Total = () => {
             <h5>Total Articulos: {basket?.length}</h5>
             <h5> {accounting.formatMoney(getBasketTotal(basket), { symbol: "COP",  format: "%v %s" })}</h5>
             <Link to="/checkout">
-            <Button className={classes.button} variant="contained" color="primary">Terminar compra</Button>
+            <Button className={classes.button} variant="contained" color="secondary">Terminar compra</Button>
             </Link>
         </div>
     )
