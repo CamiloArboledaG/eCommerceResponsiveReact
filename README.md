@@ -36,6 +36,16 @@ firebase is used to make registration and sign-in work and is published through 
 https://gifted-keller-817cbb.netlify.app/
 ```
 
+## additional information  🤓
+
+Details: Change primary color to secondary color.
+
+![image](https://user-images.githubusercontent.com/50644185/117743915-58bb1600-b1cd-11eb-8a27-f7f9c98dc8d1.png)
+![image](https://user-images.githubusercontent.com/50644185/117743938-62dd1480-b1cd-11eb-916a-b79a4fb0b9c7.png)
+![image](https://user-images.githubusercontent.com/50644185/117743953-696b8c00-b1cd-11eb-9f08-22cf228f9adf.png)
+
+
+
 
 ## Built by 🛠️
 * Juan Camilo Arboleda Garcia 
